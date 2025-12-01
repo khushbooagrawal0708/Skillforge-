@@ -16,68 +16,47 @@
     --bg-1:#f7fbff; --bg-2:#eef3ff; --card:#ffffff; --muted:#6b7280;
     --glass: rgba(2,6,23,0.03); --glass-border: rgba(2,6,23,0.06);
   }
-
   *{box-sizing:border-box}
   html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg-1),var(--bg-2));-webkit-font-smoothing:antialiased}
   [data-theme="light"] body{color:#071033}
-
-  /* Layout */
   .container{max-width:1200px;margin:26px auto;padding:18px;display:grid;grid-template-columns:260px 1fr;gap:18px}
   @media (max-width:900px){ .container{grid-template-columns:1fr;padding:12px} .sidebar{order:2} .main{order:1} }
-
-  /* Sidebar */
   .sidebar{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px;border-radius:14px;border:1px solid var(--glass-border);min-height:520px;box-shadow:0 10px 30px rgba(2,6,23,0.35)}
   .brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
   .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accentA),var(--accentB));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px;box-shadow:0 6px 20px rgba(75,55,255,0.2)}
   .app-title{font-weight:800;font-size:18px}
   .subtitle{font-size:12px;color:var(--muted)}
-
   .menu{display:flex;flex-direction:column;gap:8px;margin-top:12px}
   .menu button{background:transparent;border:none;color:inherit;text-align:left;padding:12px;border-radius:10px;cursor:pointer;font-weight:600;transition:all .18s}
   .menu button:hover{transform:translateX(6px)}
   .menu button.active{background:linear-gradient(90deg, rgba(76,111,255,0.12), rgba(139,92,246,0.06)); color:var(--accentA)}
-
   .userbox{margin-top:18px;padding:10px;border-radius:12px;background:var(--glass);display:flex;gap:10px;align-items:center;border:1px solid var(--glass-border)}
   .avatar{width:52px;height:52px;border-radius:12px;background:linear-gradient(90deg,var(--accentA),var(--accentB));display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:18px}
-
-  /* Main */
   .main{min-height:520px}
   .header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
   .title{font-size:20px;font-weight:800}
   .top-actions{display:flex;gap:8px;align-items:center}
-
   .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:16px;border-radius:12px;border:1px solid var(--glass-border); margin-bottom:14px; box-shadow:0 8px 30px rgba(3,6,30,0.35)}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   @media (max-width:900px){ .grid{grid-template-columns:1fr} }
-
   button.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accentA),var(--accentB));color:white;cursor:pointer;font-weight:700;box-shadow:0 6px 20px rgba(76,111,255,0.12)}
   button.ghost{background:transparent;border:1px solid var(--glass-border);color:inherit}
-
   input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;outline:none}
   label{font-size:13px;color:var(--muted);display:block;margin-bottom:8px}
-
   .question{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);margin-bottom:8px}
   .options{display:flex;flex-direction:column;gap:8px;margin-top:8px}
   .option{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;background:transparent;transition:all .15s}
   .option:hover{transform:translateX(6px)}
   .option.correct{border-color:rgba(34,197,94,0.7);background:linear-gradient(90deg, rgba(34,197,94,0.06), transparent)}
   .option.wrong{border-color:rgba(239,68,68,0.6);background:linear-gradient(90deg, rgba(239,68,68,0.04), transparent)}
-
   .muted{color:var(--muted);font-size:13px}
   .small{font-size:13px;color:var(--muted)}
-
-  /* Login modal */
   .loginModal{position:fixed;left:0;top:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(2,6,23,0.68), rgba(2,6,23,0.68));z-index:999}
   .loginBox{width:460px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:14px;border:1px solid var(--glass-border);box-shadow:0 30px 80px rgba(2,6,23,0.6)}
   .login-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .login-grid .col{display:flex;flex-direction:column;gap:10px}
-
   .hint{font-size:12px;color:var(--muted);margin-top:8px}
-
-  /* certificate canvas */
   #certCanvas{width:100%;max-width:920px;border-radius:10px;border:1px solid var(--glass-border);display:block;margin-top:12px;background:white}
-
-  /* small helpers */
   .right{display:flex;gap:8px;align-items:center}
   .pill{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);font-weight:700}
 </style>
@@ -133,7 +112,6 @@
 
 <!-- APP LAYOUT -->
 <div class="container" id="app" style="display:none">
-
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="brand">
@@ -143,7 +121,6 @@
         <div class="subtitle">Adaptive Learning & Exam Generator</div>
       </div>
     </div>
-
     <nav class="menu" id="menu">
       <button class="active" data-page="dashboard" onclick="navTo(event)">Dashboard</button>
       <button data-page="courses" onclick="navTo(event)">Courses</button>
@@ -163,7 +140,7 @@
       </div>
     </div>
 
-    <div style="margin-top:12px;display:flex;gap:8px">
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
       <button class="btn ghost" onclick="toggleTheme()">Toggle theme</button>
       <button class="btn" style="background:var(--danger)" onclick="logout()">Logout</button>
     </div>
@@ -183,11 +160,10 @@
       </div>
     </div>
 
-    <!-- Pages -->
+    <!-- Dashboard Page -->
     <section id="dashboard" class="card page">
       <h3>Welcome, <span id="welcomeName">Learner</span> 👋</h3>
       <div class="small muted">Start an adaptive session, take a practice exam, or view results.</div>
-
       <div style="margin-top:14px" class="grid">
         <div class="card">
           <h4>Adaptive Session</h4>
@@ -200,7 +176,6 @@
           </select>
           <div style="margin-top:12px"><button class="btn" onclick="startAdaptive()">Start Adaptive</button></div>
         </div>
-
         <div class="card">
           <h4>Practice Exam</h4>
           <div class="small muted">Generate a quick practice quiz from question bank.</div>
@@ -208,7 +183,6 @@
           <select id="topicSelect"><option>Mixed</option><option>Front-end</option><option>Data Structures</option><option>Algorithms</option></select>
           <div style="margin-top:12px"><button class="btn" onclick="openPage('exam')">Go to Exam</button></div>
         </div>
-
         <div class="card">
           <h4>Your Progress</h4>
           <div id="progressSummary" style="margin-top:6px" class="small muted">No attempts yet</div>
@@ -216,264 +190,250 @@
       </div>
     </section>
 
+    <!-- Courses Page -->
     <section id="courses" class="card page" style="display:none">
       <h3>Courses</h3>
-      <div style="margin-top:10px">
-        <div class="question"><strong>Front-end Web Dev</strong><div class="small muted">HTML • CSS • JS</div></div>
-        <div class="question"><strong>Data Structures</strong><div class="small muted">Arrays • Trees • Graphs</div></div>
-        <div class="question"><strong>Algorithms</strong><div class="small muted">Sorting • Searching</div></div>
-      </div>
+      <div class="grid" id="courseGrid"></div>
     </section>
 
+    <!-- Adaptive Learning Page -->
     <section id="learning" class="card page" style="display:none">
       <h3>Adaptive Learning Session</h3>
-      <div id="adaptiveArea" style="margin-top:12px"></div>
+      <div style="height:12px;background:#ddd;border-radius:8px;margin-bottom:12px">
+        <div id="lessonProgressBar" style="height:100%;width:0%;background:#4caf50;border-radius:8px"></div>
+      </div>
+      <div id="adaptiveArea"></div>
     </section>
 
+    <!-- Exam Page -->
     <section id="exam" class="card page" style="display:none">
-      <h3>Exam Generator & Practice</h3>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <div style="flex:1;min-width:180px">
-          <label>Topic</label>
-          <select id="examTopic"><option>Mixed</option><option>Front-end</option><option>Data Structures</option><option>Algorithms</option></select>
-        </div>
-        <div style="width:140px">
-          <label>Difficulty</label>
-          <select id="examDifficulty"><option value="1">Beginner</option><option value="2" selected>Intermediate</option><option value="3">Advanced</option></select>
-        </div>
-        <div style="width:120px">
-          <label># Questions</label>
-          <input id="examCount" type="number" min="1" max="20" value="5">
-        </div>
-        <div style="display:flex;align-items:end">
-          <button class="btn" onclick="generateExam()">Generate</button>
-        </div>
+      <h3>Practice Exam</h3>
+      <div>
+        <label>Select Topic</label>
+        <select id="examTopic">
+          <option>Mixed</option>
+          <option>Front-end</option>
+          <option>Data Structures</option>
+          <option>Algorithms</option>
+        </select>
+        <label style="margin-top:6px">Number of Questions</label>
+        <input type="number" id="examCount" value="5" min="1" max="20">
+        <div style="margin-top:10px"><button class="btn" onclick="startExam()">Start Exam</button></div>
       </div>
-
       <div id="examArea" style="margin-top:12px"></div>
     </section>
 
+    <!-- Results Page -->
     <section id="results" class="card page" style="display:none">
-      <h3>Results & Attempts</h3>
-      <div id="resultsList" style="margin-top:10px"></div>
+      <h3>Your Results</h3>
+      <div id="resultsList" class="grid"></div>
     </section>
 
+    <!-- Certificate Page -->
     <section id="cert" class="card page" style="display:none">
-      <h3>Certificate Generator</h3>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-        <input id="certName" placeholder="Full name for certificate" style="flex:1" />
-        <select id="certChoose" style="min-width:220px"></select>
-        <button class="btn" onclick="generateCertificate()">Generate</button>
-      </div>
-      <canvas id="certCanvas" width="1200" height="675" style="display:none"></canvas>
-      <div id="certActions" style="margin-top:8px"></div>
+      <h3>Generate Certificate</h3>
+      <label>Enter Name</label>
+      <input type="text" id="certName" placeholder="Your Name">
+      <button class="btn" style="margin-top:10px" onclick="generateCert()">Generate Certificate</button>
+      <canvas id="certCanvas"></canvas>
     </section>
 
+    <!-- Teacher Panel -->
     <section id="teacher" class="card page" style="display:none">
       <h3>Teacher Panel</h3>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <div style="flex:1;min-width:320px">
-          <label>Question text</label>
-          <textarea id="qText" rows="3"></textarea>
-          <label>Option A</label><input id="optA">
-          <label>Option B</label><input id="optB">
-          <label>Option C</label><input id="optC">
-          <label>Correct option (A/B/C)</label><input id="qCorrect" placeholder="A">
-          <label>Topic</label><input id="qTopic" placeholder="e.g. Data Structures">
-          <label>Difficulty (1-3)</label><input id="qDiff" type="number" min="1" max="3" value="2">
-          <div style="margin-top:10px"><button class="btn" onclick="teacherAddQuestion()">Add Question</button></div>
+      <div class="grid">
+        <div class="card">
+          <h4>Add Question</h4>
+          <label>Question</label>
+          <input type="text" id="tqText" placeholder="Type question">
+          <label>Option A</label>
+          <input type="text" id="tqA">
+          <label>Option B</label>
+          <input type="text" id="tqB">
+          <label>Option C</label>
+          <input type="text" id="tqC">
+          <label>Option D</label>
+          <input type="text" id="tqD">
+          <label>Correct Option (A/B/C/D)</label>
+          <input type="text" id="tqCorrect">
+          <label>Topic</label>
+          <select id="tqTopic"><option>Front-end</option><option>Data Structures</option><option>Algorithms</option></select>
+          <div style="margin-top:8px"><button class="btn" onclick="addTeacherQ()">Add Question</button></div>
         </div>
-
-        <div style="flex:1;min-width:320px">
-          <h4>Question Bank</h4>
-          <div id="bankList" style="max-height:420px;overflow:auto"></div>
+        <div class="card">
+          <h4>All Questions</h4>
+          <div id="teacherQList" style="max-height:400px;overflow-y:auto"></div>
         </div>
-      </div>
-
-      <div style="margin-top:12px">
-        <h4>Student Results (Teacher View)</h4>
-        <div id="teacherResults"></div>
       </div>
     </section>
-
-    <section id="settings" class="card page" style="display:none">
-      <h3>Settings</h3>
-      <div style="display:flex;gap:8px;align-items:center">
-        <label style="min-width:120px">Display name</label>
-        <input id="settingName" style="flex:1">
-      </div>
-      <div style="margin-top:8px">
-        <button class="btn" onclick="saveSettings()">Save settings</button>
-        <button class="btn ghost" onclick="resetApp()">Reset App</button>
-      </div>
-    </section>
-
   </main>
 </div>
 
 <script>
-/* ---------- Storage keys & seed ---------- */
-const STORAGE = { user:'sf_user', bank:'sf_qbank', res:'sf_res', settings:'sf_settings', diff:'sf_diff' };
+let currentUser = {role:'student', name:'Student', email:'student@demo'};
+let questionsDB = [
+  {text:'What is HTML?', options:['Language','Framework','Library','IDE'], correct:'A', topic:'Front-end'},
+  {text:'JS stands for?', options:['JavaScript','JavaStyle','JScript','JoinScript'], correct:'A', topic:'Front-end'},
+  {text:'DFS uses?', options:['Queue','Stack','Priority Queue','Tree'], correct:'B', topic:'Data Structures'},
+  {text:'Big O of binary search?', options:['O(n)','O(log n)','O(n^2)','O(1)'], correct:'B', topic:'Algorithms'}
+];
+let resultsDB = [];
 
-function seed(){
-  if(!localStorage.getItem(STORAGE.bank)){
-    const sample = [
-      {id:id(), topic:'Front-end', difficulty:1, text:'What does HTML stand for?', choices:['Hyper Text Markup Language','Home Tool Markup Language','Hyperlink Text Markup'], correct:0},
-      {id:id(), topic:'Front-end', difficulty:2, text:'Which CSS layout is modern?', choices:['float','flex/grid','align'], correct:1},
-      {id:id(), topic:'Data Structures', difficulty:2, text:'Which uses FIFO?', choices:['Stack','Queue','Tree'], correct:1},
-      {id:id(), topic:'Algorithms', difficulty:3, text:'Big-O of binary search?', choices:['O(n)','O(log n)','O(n log n)'], correct:1}
-    ];
-    localStorage.setItem(STORAGE.bank, JSON.stringify(sample));
-  }
-  if(!localStorage.getItem(STORAGE.res)) localStorage.setItem(STORAGE.res, JSON.stringify([]));
-  if(!localStorage.getItem(STORAGE.settings)) localStorage.setItem(STORAGE.settings, JSON.stringify({theme:'dark',name:'Learner'}));
-  if(!localStorage.getItem(STORAGE.diff)) localStorage.setItem(STORAGE.diff,'2');
-}
-seed();
-
-/* ---------- Helpers ---------- */
-function id(){ return 'id_'+Math.random().toString(36).slice(2,9); }
-function now(){ return new Date().toISOString(); }
-function loadBank(){ return JSON.parse(localStorage.getItem(STORAGE.bank)||'[]'); }
-function saveBank(b){ localStorage.setItem(STORAGE.bank, JSON.stringify(b)); }
-function loadRes(){ return JSON.parse(localStorage.getItem(STORAGE.res)||'[]'); }
-function saveRes(r){ localStorage.setItem(STORAGE.res, JSON.stringify(r)); }
-function saveUser(u){ localStorage.setItem(STORAGE.user, JSON.stringify(u)); }
-function loadUser(){ return JSON.parse(localStorage.getItem(STORAGE.user)||'null'); }
-function getSettings(){ return JSON.parse(localStorage.getItem(STORAGE.settings)||'{}'); }
-function setSettings(s){ localStorage.setItem(STORAGE.settings, JSON.stringify(s)); }
-
-/* ---------- Login & Theme ---------- */
-const loginModal = document.getElementById('loginModal');
-const app = document.getElementById('app');
-const avatar = document.getElementById('avatar');
-
-function demoStudent(){ const u={role:'student',name:'student1',email:'student@demo'}; saveUser(u); applyUser(u); }
-function demoTeacher(){ const u={role:'teacher',name:'teacher1',email:'teacher@demo'}; saveUser(u); applyUser(u); }
-
+function demoStudent(){document.getElementById('loginUser').value='student1';document.getElementById('loginPass').value='pass';document.getElementById('loginRole').value='student';}
+function demoTeacher(){document.getElementById('loginUser').value='teacher1';document.getElementById('loginPass').value='pass';document.getElementById('loginRole').value='teacher';}
+function closeLogin(){document.getElementById('loginModal').style.display='none';}
 function doLogin(){
-  const role = document.getElementById('loginRole').value;
-  const name = document.getElementById('loginUser').value.trim() || (role==='student'?'student1':'teacher1');
-  const pass = document.getElementById('loginPass').value || 'pass';
-  const user = {role, name, email: name+'@demo'};
-  saveUser(user);
-  applyUser(user);
+  currentUser.name=document.getElementById('loginUser').value||'User';
+  currentUser.role=document.getElementById('loginRole').value;
+  currentUser.email=currentUser.role+'@demo';
+  document.getElementById('welcomeName').innerText=currentUser.name;
+  document.getElementById('userName').innerText=currentUser.name;
+  document.getElementById('userEmail').innerText=currentUser.email;
+  document.getElementById('avatar').innerText=currentUser.name[0].toUpperCase();
+  if(currentUser.role==='teacher') document.getElementById('teacherMenu').style.display='block';
+  closeLogin(); document.getElementById('app').style.display='grid';
+  loadCourses();
+  loadTeacherQ();
 }
 
-function closeLogin(){ const u = loadUser(); if(u){ applyUser(u); } else { alert('Please sign in or use demo'); } }
-
-function applyUser(u){
-  saveUser(u);
-  loginModal.style.display='none';
-  app.style.display='grid';
-  document.getElementById('userName').innerText = u.name;
-  document.getElementById('welcomeName').innerText = u.name;
-  document.getElementById('userEmail').innerText = u.email || '';
-  avatar.innerText = (u.name||'S')[0].toUpperCase();
-  document.getElementById('settingName').value = u.name;
-  if(u.role==='teacher'){ document.getElementById('teacherMenu').style.display='block'; showPage('teacher'); }
-  else { document.getElementById('teacherMenu').style.display='none'; showPage('dashboard'); }
-  renderBank(); renderResults(); populateCertList(); updateProgress();
+function logout(){location.reload();}
+function toggleTheme(){
+  let t=document.body.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.body.setAttribute('data-theme',t);
 }
 
-/* Init: check saved user */
-(function init(){
-  const s = getSettings(); document.body.setAttribute('data-theme', s.theme==='light'?'light':'dark');
-  const u = loadUser();
-  if(u){ applyUser(u); } else { loginModal.style.display='flex'; app.style.display='none'; }
-})();
-
-function toggleTheme(){ const s=getSettings(); s.theme = s.theme==='light'?'dark':'light'; setSettings(s); document.body.setAttribute('data-theme', s.theme==='light'?'light':'dark'); }
-
-/* ---------- Navigation ---------- */
 function navTo(e){
-  const page = e.currentTarget.dataset.page;
   document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
-  e.currentTarget.classList.add('active');
-  showPage(page);
+  e.target.classList.add('active');
+  let page=e.target.getAttribute('data-page');
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  document.getElementById(page).style.display='block';
+  document.getElementById('pageTitle').innerText=e.target.innerText;
+  document.getElementById('pageSub').innerText="Welcome to "+e.target.innerText;
 }
-function showPage(pid){ document.querySelectorAll('.page').forEach(p=>p.style.display='none'); const el=document.getElementById(pid); if(el) el.style.display='block'; document.getElementById('pageTitle').innerText = pid.charAt(0).toUpperCase()+pid.slice(1); }
 
-/* ---------- Adaptive ---------- */
-function startAdaptive(){
-  const start = Number(document.getElementById('startDiff').value || localStorage.getItem(STORAGE.diff) || 2);
-  localStorage.setItem(STORAGE.diff, start);
-  const bank = loadBank(); const qs = pick(bank,6,start); renderAdaptive(qs);
+// COURSES
+function loadCourses(){
+  const grid=document.getElementById('courseGrid');
+  grid.innerHTML='';
+  ['HTML & CSS','JavaScript','Data Structures','Algorithms'].forEach(c=>{
+    let div=document.createElement('div');
+    div.className='card';
+    div.innerHTML=`<h4>${c}</h4><div class="small muted">Click to start session</div><button class="btn" onclick="startCourse('${c}')">Start</button>`;
+    grid.appendChild(div);
+  });
 }
-function pick(pool,count,target){ const sorted = pool.slice().sort((a,b)=> Math.abs(a.difficulty-target) - Math.abs(b.difficulty-target)); const out=[]; for(let i=0;i<sorted.length && out.length<count;i++){ if(!out.find(x=>x.id===sorted[i].id)) out.push(sorted[i]); } return out.slice(0,count); }
-function renderAdaptive(qs){
-  showPage('learning'); const area=document.getElementById('adaptiveArea'); area.innerHTML=''; let idx=0; const answers=[];
-  function showQ(){ if(!qs[idx]) return area.innerHTML='<div class="small muted">No questions available</div>';
-    const q=qs[idx];
-    area.innerHTML = `<div><div style="display:flex;justify-content:space-between"><strong>Q ${idx+1}/${qs.length}</strong><div class="small muted">D${q.difficulty} • ${q.topic}</div></div><div style="margin-top:10px">${q.text}</div><div class="options" id="opts"></div></div>`;
-    const opts = document.getElementById('opts'); q.choices.forEach((c,i)=>{ const d=document.createElement('div'); d.className='option'; d.innerText=c; d.onclick=()=>{ const correct = (i===q.correct); answers.push({qid:q.id,correct}); d.classList.add(correct?'correct':'wrong'); setTimeout(()=>{ idx++; if(idx<qs.length) showQ(); else finish(); },700); }; opts.appendChild(d); });
+function startCourse(name){
+  navTo({target:{getAttribute:()=> 'learning'}, targetName:name});
+  startAdaptive(name);
+}
+
+// ADAPTIVE LEARNING
+let adaptiveQ=[],adaptiveIndex=0;
+function startAdaptive(topic='Mixed'){
+  adaptiveQ=questionsDB.filter(q=>topic==='Mixed'||q.topic===topic);
+  adaptiveIndex=0;
+  showAdaptiveQ();
+}
+function showAdaptiveQ(){
+  if(adaptiveIndex>=adaptiveQ.length){document.getElementById('adaptiveArea').innerHTML='<div class="small muted">Session Completed!</div>';return;}
+  let q=adaptiveQ[adaptiveIndex];
+  let html=`<div class="question">${q.text}</div><div class="options">`;
+  ['A','B','C','D'].forEach((opt,i)=>{
+    html+=`<div class="option" onclick="answerAdaptive('${opt}',this)">${opt}: ${q.options[i]}</div>`;
+  });
+  html+='</div>';
+  document.getElementById('adaptiveArea').innerHTML=html;
+  let prog=Math.round((adaptiveIndex/adaptiveQ.length)*100);
+  document.getElementById('lessonProgressBar').style.width=prog+'%';
+}
+function answerAdaptive(opt,el){
+  let q=adaptiveQ[adaptiveIndex];
+  if(opt===q.correct){el.classList.add('correct');}else{el.classList.add('wrong');}
+  adaptiveIndex++;
+  setTimeout(showAdaptiveQ,600);
+}
+
+// EXAM LOGIC
+let examQ=[],examIndex=0,examAnswers=[];
+function startExam(){
+  let topic=document.getElementById('examTopic').value;
+  let count=parseInt(document.getElementById('examCount').value);
+  examQ=questionsDB.filter(q=>topic==='Mixed'||q.topic===topic).slice(0,count);
+  examIndex=0; examAnswers=[];
+  showExamQ();
+}
+function showExamQ(){
+  if(examIndex>=examQ.length){
+    let correct=examAnswers.filter(r=>r).length;
+    resultsDB.push({user:currentUser.name,date:new Date().toLocaleString(),score:correct+'/'+examQ.length});
+    document.getElementById('examArea').innerHTML=`<div class="small muted">Exam Completed! Score: ${correct}/${examQ.length}</div>`;
+    return;
   }
-  function finish(){ const acc = answers.filter(a=>a.correct).length/answers.length; let cur = Number(localStorage.getItem(STORAGE.diff)||2); if(acc>=0.8) cur = Math.min(3,cur+1); else if(acc<=0.5) cur = Math.max(1,cur-1); localStorage.setItem(STORAGE.diff, cur); const results=loadRes(); results.unshift({id:id(),type:'adaptive',date:now(),score:acc,attempts:answers.length,newDiff:cur}); saveRes(results); renderResults(); populateCertList(); updateProgress(); area.innerHTML=`<div class="card"><strong>Session finished</strong><div class="small muted">Score ${Math.round(acc*100)}% — difficulty ${cur}</div><div style="margin-top:10px"><button class="btn" onclick="showPage('dashboard')">Back</button></div></div>`; }
-  showQ();
+  let q=examQ[examIndex];
+  let html=`<div class="question">${q.text}</div><div class="options">`;
+  ['A','B','C','D'].forEach((opt,i)=>{
+    html+=`<div class="option" onclick="answerExam('${opt}',this)">${opt}: ${q.options[i]}</div>`;
+  });
+  html+='</div>';
+  document.getElementById('examArea').innerHTML=html;
+}
+function answerExam(opt,el){
+  let q=examQ[examIndex];
+  examAnswers.push(opt===q.correct);
+  el.classList.add(opt===q.correct?'correct':'wrong');
+  examIndex++;
+  setTimeout(showExamQ,600);
 }
 
-/* ---------- Exam ---------- */
-function generateExam(){
-  const topic = document.getElementById('examTopic').value; const diff = Number(document.getElementById('examDifficulty').value); const cnt = Number(document.getElementById('examCount').value)||5;
-  let pool = loadBank(); if(topic!=='Mixed') pool = pool.filter(q=>q.topic===topic);
-  const qs = pick(pool,cnt,diff);
-  renderExam(qs);
-}
-function renderExam(qs){
-  showPage('exam'); const area=document.getElementById('examArea'); area.innerHTML=''; if(qs.length===0){ area.innerHTML='<div class="small muted">No questions for selected filters.</div>'; return; }
-  let idx=0; const answers=[]; let timer; const timePer=60;
-  function renderQ(){ const q=qs[idx]; area.innerHTML=`<div><div style="display:flex;justify-content:space-between"><strong>Q ${idx+1}/${qs.length}</strong><div class="small muted" id="timer">Time</div></div><div style="margin-top:10px">${q.text}</div><div class="options" id="opts"></div></div>`; const opts=document.getElementById('opts'); q.choices.forEach((c,i)=>{ const d=document.createElement('div'); d.className='option'; d.innerText=c; d.onclick=()=>{ const correct=(i===q.correct); answers.push({qid:q.id,correct}); d.classList.add(correct?'correct':'wrong'); clearInterval(timer); setTimeout(()=> nextQ(),600); }; opts.appendChild(d); }); let t=timePer; document.getElementById('timer').innerText = formatTime(t); timer=setInterval(()=>{ t--; document.getElementById('timer').innerText = formatTime(t); if(t<=0){ clearInterval(timer); answers.push({qid:q.id,correct:false}); nextQ(); } },1000); }
-  function nextQ(){ idx++; if(idx<qs.length) renderQ(); else finish(); }
-  function finish(){ const score = answers.filter(a=>a.correct).length/answers.length; const results=loadRes(); results.unshift({id:id(),type:'exam',date:now(),score,questions:answers.length}); saveRes(results); renderResults(); populateCertList(); updateProgress(); area.innerHTML=`<div class="card"><strong>Exam finished</strong><div class="small muted">Score: ${Math.round(score*100)}%</div><div style="margin-top:8px"><button class="btn" onclick="showPage('results')">View Results</button></div></div>`; }
-  renderQ();
+// RESULTS
+function loadResults(){
+  const list=document.getElementById('resultsList');
+  list.innerHTML='';
+  resultsDB.filter(r=>r.user===currentUser.name).forEach(r=>{
+    let div=document.createElement('div');
+    div.className='card';
+    div.innerHTML=`<div>${r.date}</div><div class="small muted">Score: ${r.score}</div>`;
+    list.appendChild(div);
+  });
 }
 
-/* ---------- Teacher CRUD ---------- */
-function teacherAddQuestion(){
-  const text = document.getElementById('qText').value.trim();
-  const a = document.getElementById('optA').value.trim();
-  const b = document.getElementById('optB').value.trim();
-  const c = document.getElementById('optC').value.trim();
-  const corr = (document.getElementById('qCorrect').value||'A').toUpperCase();
-  const topic = document.getElementById('qTopic').value.trim()||'Mixed';
-  const diff = Number(document.getElementById('qDiff').value||2);
-  if(!text||!a||!b||!c) return alert('Fill all fields');
-  const choices=[a,b,c]; const correctIndex={'A':0,'B':1,'C':2}[corr]||0;
-  const bank=loadBank(); bank.unshift({id:id(),topic,difficulty:diff,text,choices,correct:correctIndex}); saveBank(bank); renderBank(); document.getElementById('qText').value=''; document.getElementById('optA').value=''; document.getElementById('optB').value=''; document.getElementById('optC').value=''; document.getElementById('qCorrect').value='A'; alert('Question added'); }
-function renderBank(){ const bank=loadBank(); const el=document.getElementById('bankList'); el.innerHTML=''; if(bank.length===0) el.innerHTML='<div class="small muted">No questions yet</div>'; bank.forEach(q=>{ const d=document.createElement('div'); d.className='question'; d.innerHTML=`<div style="display:flex;justify-content:space-between"><div><strong>${q.topic}</strong></div><div class="small muted">D${q.difficulty}</div></div><div style="margin-top:8px">${q.text}</div><div class="small muted">A. ${q.choices[0]} &nbsp; B. ${q.choices[1]} &nbsp; C. ${q.choices[2]}</div><div style="margin-top:8px"><button class="btn ghost" onclick="deleteQ('${q.id}')">Delete</button></div>`; el.appendChild(d); }); }
-function deleteQ(qid){ if(!confirm('Delete this question?')) return; const b=loadBank().filter(x=>x.id!==qid); saveBank(b); renderBank(); }
+// CERTIFICATE
+function generateCert(){
+  let name=document.getElementById('certName').value||currentUser.name;
+  let canvas=document.getElementById('certCanvas');
+  canvas.width=800; canvas.height=400;
+  let ctx=canvas.getContext('2d');
+  ctx.fillStyle='#f0f0f0'; ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle='#0f1724'; ctx.font='32px Inter'; ctx.textAlign='center';
+  ctx.fillText('Certificate of Completion',canvas.width/2,80);
+  ctx.font='24px Inter'; ctx.fillText(name,canvas.width/2,180);
+  ctx.font='18px Inter'; ctx.fillText('has successfully completed the SkillForge session.',canvas.width/2,240);
+}
 
-/* ---------- Results & Certificate ---------- */
-function renderResults(){ const list=loadRes(); const el=document.getElementById('resultsList'); el.innerHTML=''; if(list.length===0) el.innerHTML='<div class="small muted">No attempts yet</div>'; list.forEach(r=>{ const d=document.createElement('div'); d.className='question'; d.innerHTML=`<div style="display:flex;justify-content:space-between"><div><strong>${r.type==='exam'?'Exam':'Adaptive'}</strong><div class="small muted">${new Date(r.date).toLocaleString()}</div></div><div style="text-align:right"><div style="font-weight:800">${Math.round((r.score||0)*100)}%</div><div class="small muted">${r.questions?r.questions+' Q':''}</div></div></div><div style="margin-top:8px"><button class="btn" onclick="downloadCert('${r.id}')">Certificate</button></div>`; el.appendChild(d); }); const trEl=document.getElementById('teacherResults'); if(trEl){ trEl.innerHTML=''; if(list.length===0) trEl.innerHTML='<div class="small muted">No attempts</div>'; list.forEach(r=>{ const d=document.createElement('div'); d.className='question'; d.innerHTML=`<div style="display:flex;justify-content:space-between"><div><strong>${r.type}</strong><div class="small muted">${new Date(r.date).toLocaleString()}</div></div><div style="text-align:right">${Math.round((r.score||0)*100)}%</div></div>`; trEl.appendChild(d); }); } populateCertList(); }
-function populateCertList(){ const sel=document.getElementById('certChoose'); if(!sel) return; const list=loadRes(); sel.innerHTML=''; list.forEach(r=>{ const opt=document.createElement('option'); opt.value=r.id; opt.text=`${r.type} — ${Math.round((r.score||0)*100)}% — ${new Date(r.date).toLocaleDateString()}`; sel.appendChild(opt); }); if(list.length===0){ const o=document.createElement('option'); o.text='No attempts yet'; sel.appendChild(o); } }
-function generateCertificate(){ const name=document.getElementById('certName').value.trim(); if(!name) return alert('Enter name'); const rid=document.getElementById('certChoose').value; const rec=loadRes().find(x=>x.id===rid); const score=rec?Math.round((rec.score||0)*100):'—'; const date=rec?new Date(rec.date).toLocaleDateString():new Date().toLocaleDateString(); const canvas=document.getElementById('certCanvas'); const ctx=canvas.getContext('2d'); canvas.style.display='block'; ctx.clearRect(0,0,canvas.width,canvas.height); const g=ctx.createLinearGradient(0,0,canvas.width,0); g.addColorStop(0,'#4c6fff'); g.addColorStop(1,'#8b5cf6'); ctx.fillStyle=g; ctx.fillRect(0,0,canvas.width,canvas.height); ctx.fillStyle='#fff'; ctx.font='40px Inter'; ctx.textAlign='center'; ctx.fillText('Certificate of Completion', canvas.width/2, 120); ctx.font='30px Inter'; ctx.fillText(name, canvas.width/2, 220); ctx.font='18px Inter'; ctx.fillStyle='#e8eefe'; ctx.fillText(`has completed the activity with score ${score}%`, canvas.width/2, 270); ctx.fillText(`Date: ${date}`, canvas.width/2, 310); document.getElementById('certActions').innerHTML = `<button class="btn" onclick="downloadCanvas()">Download PNG</button>`; }
-function downloadCanvas(){ const canvas=document.getElementById('certCanvas'); const url=canvas.toDataURL('image/png'); const a=document.createElement('a'); a.href=url; a.download='certificate.png'; a.click(); }
-
-/* ---------- Misc UX ---------- */
-function quickExam(){ document.getElementById('examTopic').value='Mixed'; document.getElementById('examDifficulty').value='2'; document.getElementById('examCount').value='5'; showPage('exam'); generateExam(); }
-function updateProgress(){ const list=loadRes(); const s=list.length?`${Math.round((list[0].score||0)*100)}% — last attempt`:'No attempts yet'; const el=document.getElementById('progressSummary'); if(el) el.innerText=s; const diff=document.getElementById('diffBadge'); if(diff) diff.innerText = ({1:'Beginner',2:'Intermediate',3:'Advanced'}[Number(localStorage.getItem(STORAGE.diff)||2)]); }
-function downloadCert(rid){ const rec=loadRes().find(x=>x.id===rid); if(!rec) return alert('Not found'); document.getElementById('certName').value = (loadUser()&&loadUser().name)||'Learner'; document.getElementById('certChoose').value = rid; showPage('cert'); generateCertificate(); }
-
-/* ---------- Settings / Save / Logout ---------- */
-function saveSettings(){ const s=getSettings(); s.name=document.getElementById('settingName').value||s.name; setSettings(s); const u=loadUser(); if(u){ u.name=s.name; saveUser(u); applyUser(u); } alert('Saved'); }
-function logout(){ localStorage.removeItem(STORAGE.user); location.reload(); }
-function resetApp(){ if(!confirm('Clear local questions & results?')) return; localStorage.removeItem(STORAGE.bank); localStorage.removeItem(STORAGE.res); localStorage.removeItem(STORAGE.diff); seed(); renderBank(); renderResults(); populateCertList(); updateProgress(); alert('Reset done'); }
-
-/* ---------- Utilities & bootstrap ---------- */
-function formatTime(s){ const m=Math.floor(s/60).toString().padStart(2,'0'); const sec=(s%60).toString().padStart(2,'0'); return `${m}:${sec}`; }
-function loadUser(){ return JSON.parse(localStorage.getItem(STORAGE.user)||'null'); }
-function seed(){ /* already seeded at top */ }
-renderBank = () => { try{ renderBankFn(); }catch(e){} }; // placeholder
-/* Actual initial render */
-renderBank(); renderResults(); populateCertList(); updateProgress();
-
-/* Implement missing small wrappers (avoid function hoisting issues) */
-function renderBankFn(){ /* call actual renderBank code above by referencing its definition name */ }
-/* NOTE: renderBank was defined earlier; ensure it's available - no-op here to satisfy bootstrap */
-
-/* Final: expose to console for debugging */
-window._sf = { loadBank, loadRes, loadUser, saveBank, saveRes };
-
+// TEACHER PANEL
+function addTeacherQ(){
+  let q={text:document.getElementById('tqText').value,
+         options:[document.getElementById('tqA').value,document.getElementById('tqB').value,document.getElementById('tqC').value,document.getElementById('tqD').value],
+         correct:document.getElementById('tqCorrect').value.toUpperCase(),
+         topic:document.getElementById('tqTopic').value};
+  questionsDB.push(q);
+  loadTeacherQ();
+  alert('Question added!');
+}
+function loadTeacherQ(){
+  const list=document.getElementById('teacherQList');
+  list.innerHTML='';
+  questionsDB.forEach((q,i)=>{
+    let div=document.createElement('div');
+    div.className='card';
+    div.innerHTML=`<div>${q.text} <span class="small muted">[${q.topic}]</span></div>
+    <div class="small muted">Correct: ${q.correct}</div>
+    <button class="btn ghost" onclick="deleteTeacherQ(${i})">Delete</button>`;
+    list.appendChild(div);
+  });
+}
+function deleteTeacherQ(idx){questionsDB.splice(idx,1);loadTeacherQ();}
 </script>
 </body>
 </html>
